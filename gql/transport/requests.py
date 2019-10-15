@@ -1,4 +1,5 @@
 from __future__ import absolute_import
+import logging
 
 import requests
 from graphql.execution import ExecutionResult
@@ -36,6 +37,7 @@ class RequestsHTTPTransport(HTTPTransport):
             data_key: payload
         }
         request = requests.post(self.url, **post_args)
+        logging.error(f'Response from GraphQL: {request.content}')
         request.raise_for_status()
 
         result = request.json()
