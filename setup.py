@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gql',
-    version='0.1.0',
+    version='0.1.1',
     description='GraphQL client for Python',
     long_description=open('README.rst').read(),
     url='https://github.com/graphql-python/gql',
