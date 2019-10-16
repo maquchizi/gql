@@ -38,7 +38,6 @@ class RequestsHTTPTransport(HTTPTransport):
         }
         request = requests.post(self.url, **post_args)
         logging.info(f'Response from GraphQL: {request.content}')
-        request.raise_for_status()
 
         result = request.json()
         assert 'errors' in result or 'data' in result, 'Received non-compatible response "{}"'.format(result)
